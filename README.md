@@ -68,3 +68,4 @@ The primary objective is to predict the ideal listing price for Airbnb propertie
 #### Data Cleaning and Formatting
 - We format columns such as price by removing currency symbols, convert dates into datetime formats, and ensure consistency in categorical variables. This step prepares the data for efficient modeling.
 
+![An Image](D:\OneDrive\Pictures\Screenshots 1)
