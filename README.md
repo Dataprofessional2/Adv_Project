@@ -32,3 +32,11 @@ This repository contains projects and case studies related to the Google Data An
 -Identifying High-Impact Features
 - Conclusion
 
+
+
+
+
+
+## Project Overview: AirBnb Price Optimization
+
+### Introduction
