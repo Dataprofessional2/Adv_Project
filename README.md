@@ -57,7 +57,7 @@ The primary objective is to predict the ideal listing price for Airbnb propertie
 
 
 
-##D ata Cleaning & Preparation
+## Data Cleaning & Preparation
 
 #### Data Loading and Inspection
 The first step involves loading the datasets using Python libraries such as pandas and inspecting their structure. We check the shape, column types, and summary statistics to understand the data and identify areas that need cleaning.
