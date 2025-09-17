@@ -48,5 +48,6 @@ The dataset includes comprehensive information on Airbnb listings in Seattle, su
 - listings.csv: details on accommodations, amenities, host characteristics, and pricing
 - calendar.csv: daily booking availability and prices
 - reviews.csv: customer feedback and ratings
+  
 These datasets allow us to explore how various factors influence pricing decisions and how they can be optimized.
 
