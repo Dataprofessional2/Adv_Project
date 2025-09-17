@@ -51,3 +51,7 @@ The dataset includes comprehensive information on Airbnb listings in Seattle, su
   
 These datasets allow us to explore how various factors influence pricing decisions and how they can be optimized.
 
+
+## Business Objective
+The primary objective is to predict the ideal listing price for Airbnb properties in Seattle based on features such as location, room type, capacity, and host behavior. By identifying patterns and relationships within the data, we aim to help hosts set competitive yet profitable prices while ensuring higher occupancy rates.
+
