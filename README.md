@@ -17,5 +17,18 @@ This repository contains projects and case studies related to the Google Data An
 - Seasonality and Booking Patterns
 - Feature Engineering
 - Price per Guest
-
+- Proximity to Downtown
+- Host Experience Metrics
+- Temporal Features
+- Modeling Approach
+- Baseline Linear Regression
+- Advanced Models: Random Forest and XGBoost
+- Model Evaluation
+- Error Metrics: MAE and RMSE
+- Feature Importance Analysis
+- Insights and Recommendations
+- Pricing Strategies for Hosts
+- Balancing Occupancy and Revenue
+-Identifying High-Impact Features
+- Conclusion
 
