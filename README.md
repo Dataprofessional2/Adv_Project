@@ -40,3 +40,6 @@ This repository contains projects and case studies related to the Google Data An
 ## Project Overview: AirBnb Price Optimization
 
 ### Introduction
+In this project, we explore how Airbnb hosts in Seattle can optimize pricing strategies to improve revenue and occupancy. Using the open Airbnb Seattle dataset, we analyze patterns in pricing across different property types, locations, and seasons. The goal is to build a predictive model that recommends optimal prices by leveraging available listing attributes and booking trends.
+
+
