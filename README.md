@@ -60,5 +60,11 @@ The primary objective is to predict the ideal listing price for Airbnb propertie
 ## Data Cleaning & Preparation
 
 #### Data Loading and Inspection
-The first step involves loading the datasets using Python libraries such as pandas and inspecting their structure. We check the shape, column types, and summary statistics to understand the data and identify areas that need cleaning.
+- The first step involves loading the datasets using Python libraries such as pandas and inspecting their structure. We check the shape, column types, and summary statistics to understand the data and identify areas that need cleaning.
+
+#### Handling Missing Values
+- Missing data is common in real-world datasets. We explore missing values across features like bathrooms, reviews, or price and decide on imputation techniques or row removal based on their impact on the model.
+
+#### Data Cleaning and Formatting
+- We format columns such as price by removing currency symbols, convert dates into datetime formats, and ensure consistency in categorical variables. This step prepares the data for efficient modeling.
 
