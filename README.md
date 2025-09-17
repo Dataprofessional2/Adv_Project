@@ -43,3 +43,10 @@ This repository contains projects and case studies related to the Google Data An
 In this project, we explore how Airbnb hosts in Seattle can optimize pricing strategies to improve revenue and occupancy. Using the open Airbnb Seattle dataset, we analyze patterns in pricing across different property types, locations, and seasons. The goal is to build a predictive model that recommends optimal prices by leveraging available listing attributes and booking trends.
 
 
+### Overview of AirBnb Seattle Dataset
+The dataset includes comprehensive information on Airbnb listings in Seattle, such as property features, pricing, availability, and customer reviews. Key files include:
+- listings.csv: details on accommodations, amenities, host characteristics, and pricing
+- calendar.csv: daily booking availability and prices
+- reviews.csv: customer feedback and ratings
+These datasets allow us to explore how various factors influence pricing decisions and how they can be optimized.
+
