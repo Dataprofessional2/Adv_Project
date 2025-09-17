@@ -1,4 +1,4 @@
-# AirBnb Price Optimization
+# AirBnb Price Optimization (Started 17 Sept 2025)
 This repository contains projects and case studies related to the Google Data Analytics Certification. It includes data cleaning, analysis, visualization, and insights using different tools. The goal is to apply real-world data analytics techniques to solve business problems and derive actionable insights.
 
 ## How Airbnb Seattle Optimizes Pricing for Maximum Revenue
