@@ -127,146 +127,19 @@ calendar_data['weekday'] = calendar_data['date'].dt.day_name()
 print(calendar_data.info())
 print("Missing prices after cleaning:", calendar_data['price'].isna().sum())
 ```
-
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Calendar_DataSet_Cleaning.png)
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Meant for Later Use 
+# Listings DataSet Cleansing 
 ```python
+# Importing Listings DataSet
 listings_data=pd.read_csv('D://airbnb_project//datasets//listings.csv')
-listings_data
-reviews_data=pd.read_csv('D://airbnb_project//datasets//reviews.csv')
-reviews_data
+listings_data.head(5)
 ```
 
-![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Complete_Data.png)
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Importing_Inspecting_Listings_Data.png)
 
 
