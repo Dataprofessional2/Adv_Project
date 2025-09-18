@@ -144,3 +144,33 @@ listings_data.head(5)
 ![Cols_Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Cols_In_Listings_Data.png)
 
 
+
+
+
+```python
+# Selecting only the useful columns into a new dataframe
+new_listings_columns = [
+    'id', 'host_id', 'host_is_superhost', 
+    'neighbourhood_cleansed', 'city', 'state', 'zipcode', 
+    'latitude', 'longitude',
+    'property_type', 'room_type', 'accommodates', 'bathrooms', 
+    'bedrooms', 'beds', 'bed_type', 'amenities',
+    'price', 'weekly_price', 'monthly_price', 'cleaning_fee', 'extra_people',
+    'minimum_nights', 'maximum_nights', 
+    'availability_30', 'availability_60', 'availability_90', 'availability_365',
+    'number_of_reviews', 'reviews_per_month', 
+    'review_scores_rating', 'review_scores_accuracy', 'review_scores_cleanliness', 
+    'review_scores_checkin', 'review_scores_communication', 
+    'review_scores_location', 'review_scores_value',
+    'instant_bookable', 'cancellation_policy'
+]
+
+# Make a new dataframe
+listings_clean = listings_data[new_listings_columns].copy()
+
+# Quick check
+listings_clean.info()
+```
+
+![Cols Retention](https://github.com/Dataprofessional2/Adv_Project/blob/main/Retaining_Columns.png)
+
