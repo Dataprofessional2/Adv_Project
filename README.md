@@ -86,3 +86,13 @@ calendar_data
 ```
 
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/calendar_data.png)
+
+
+```python
+listings_data=pd.read_csv('D://airbnb_project//datasets//listings.csv')
+listings_data
+reviews_data=pd.read_csv('D://airbnb_project//datasets//reviews.csv')
+reviews_data
+```
+
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Complete_Data.png)
