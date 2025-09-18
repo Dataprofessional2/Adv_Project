@@ -135,11 +135,12 @@ print("Missing prices after cleaning:", calendar_data['price'].isna().sum())
 
 # Listings DataSet Cleansing 
 ```python
-# Importing Listings DataSet
+# Importing & Inspecting Listings DataSet
 listings_data=pd.read_csv('D://airbnb_project//datasets//listings.csv')
 listings_data.head(5)
 ```
 
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Importing_Inspecting_Listings_Data.png)
+![Cols_Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Cols_In_Listings_Data.png)
 
 
