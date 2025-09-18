@@ -87,7 +87,179 @@ calendar_data
 
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/calendar_data.png)
 
+```python
+# Inspecting Data
+calendar_data.head(5)
+calendar_data.info()
+```
 
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Inspecting_Data.png)
+
+
+
+
+```python
+# Calendar DataSet Cleaning
+# Drop duplicates
+calendar_data = calendar_data.drop_duplicates()
+
+# Clean and convert price column
+calendar_data['price'] = (
+    calendar_data['price']
+    .replace('[\$,]', '', regex=True)  # remove $ and ,
+    .astype(float))
+
+# Keep only available days
+calendar_data = calendar_data[calendar_data['available'] == 't']
+
+# Fill missing prices with mean
+mean_price = calendar_data['price'].mean()
+calendar_data['price'] = calendar_data['price'].fillna(mean_price)
+
+# Convert date column to datetime
+calendar_data['date'] = pd.to_datetime(calendar_data['date'])
+
+# Extract useful time features
+calendar_data['month'] = calendar_data['date'].dt.month
+calendar_data['weekday'] = calendar_data['date'].dt.day_name()
+
+# Check results
+print(calendar_data.info())
+print("Missing prices after cleaning:", calendar_data['price'].isna().sum())
+```
+
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Calendar_DataSet_Cleaning.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Later Use
 ```python
 listings_data=pd.read_csv('D://airbnb_project//datasets//listings.csv')
 listings_data
@@ -97,10 +269,4 @@ reviews_data
 
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Complete_Data.png)
 
-```python
-# Inspecting Data
-calendar_data.head(5)
-calendar_data.info()
-```
 
-![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Inspecting_Data.png)
