@@ -78,3 +78,11 @@ import seaborn as sns
 ```
 
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Screenshot%202025-09-18%20133700.png)
+
+
+```python
+calendar_data=pd.read_csv('D://airbnb_project//datasets//calendar.csv')
+calendar_data
+```
+
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/calendar_data.png)
