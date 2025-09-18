@@ -77,4 +77,4 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ```
 
-![An Image]()
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Screenshot%202025-09-18%20133700.png)
