@@ -96,3 +96,11 @@ reviews_data
 ```
 
 ![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Complete_Data.png)
+
+```python
+# Inspecting Data
+calendar_data.head(5)
+calendar_data.info()
+```
+
+![An Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Inspecting_Data.png)
