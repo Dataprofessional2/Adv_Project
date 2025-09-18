@@ -259,7 +259,7 @@ print("Missing prices after cleaning:", calendar_data['price'].isna().sum())
 
 
 
-# Later Use
+# Meant for Later Use 
 ```python
 listings_data=pd.read_csv('D://airbnb_project//datasets//listings.csv')
 listings_data
