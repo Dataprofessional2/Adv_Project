@@ -174,3 +174,9 @@ listings_clean.info()
 
 ![Cols Retention](https://github.com/Dataprofessional2/Adv_Project/blob/main/Retaining_Columns.png)
 
+```python
+listings_clean.info()
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet%20Overview.png)
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Complete%20Overview.png)
+
