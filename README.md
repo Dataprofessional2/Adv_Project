@@ -1,5 +1,5 @@
 # AirBnb Price Optimization (Started 17 Sept 2025)
-This repository contains projects and case studies related to the Google Data Analytics Certification. It includes data cleaning, analysis, visualization, and insights using different tools. The goal is to apply real-world data analytics techniques to solve business problems and derive actionable insights.
+This repository contains projects and case studies based on real world business problems. It includes data cleaning, analysis, visualization, and insights using different tools. The goal is to apply real-world data analytics techniques to solve business problems and derive actionable insights.
 
 ## How Airbnb Seattle Optimizes Pricing for Maximum Revenue
 ## Table of Contents
@@ -179,4 +179,58 @@ listings_clean.info()
 ```
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet%20Overview.png)
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Complete%20Overview.png)
+
+
+### Listings DataSet Cleaning
+```python
+# Basic Cleaning
+
+listings_clean = listings_clean.drop_duplicates()
+
+# Handle missing values
+listings_clean['bathrooms'] = listings_clean['bathrooms'].fillna(listings_clean['bathrooms'].median())
+listings_clean['bedrooms'] = listings_clean['bedrooms'].fillna(listings_clean['bedrooms'].median())
+listings_clean['beds'] = listings_clean['beds'].fillna(listings_clean['beds'].median())
+listings_clean['review_scores_rating'] = listings_clean['review_scores_rating'].fillna(listings_clean['review_scores_rating'].median())
+listings_clean['reviews_per_month'] = listings_clean['reviews_per_month'].fillna(0)  # no reviews = 0
+
+# Convert categorical yes/no to binary
+binary_map = {'t': 1, 'f': 0, 'yes': 1, 'no': 0}
+listings_clean['host_is_superhost'] = listings_clean['host_is_superhost'].map(binary_map)
+listings_clean['instant_bookable'] = listings_clean['instant_bookable'].map(binary_map)
+
+
+# Convert price-related columns
+
+price_columns = ['price', 'weekly_price', 'monthly_price', 'cleaning_fee', 'extra_people']
+for col in price_columns:
+    if col in listings_clean.columns:
+        listings_clean[col] = listings_clean[col].replace('[\$,]', '', regex=True).astype(float)
+
+
+# Outlier Removal (Price)
+# -----------------------------
+q1 = listings_clean['price'].quantile(0.25)
+q3 = listings_clean['price'].quantile(0.75)
+iqr_listings = q3 - q1
+
+lower_limit_listings = q1 - 1.5 * iqr_listings
+upper_limit_listings = q3 + 1.5 * iqr_listings
+
+print("Lower limit for price:", lower_limit_listings)
+print("Upper limit for price:", upper_limit_listings)
+
+print("Before:", listings_clean.shape)
+
+listings_clean = listings_clean[
+    (listings_clean['price'] >= lower_limit_listings) &
+    (listings_clean['price'] <= upper_limit_listings)
+]
+
+print("After :", listings_clean.shape)
+
+# Quick Check
+print(listings_clean.head())
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet_Cleaning.png)
 
