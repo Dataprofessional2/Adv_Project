@@ -234,3 +234,10 @@ print(listings_clean.head())
 ```
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet_Cleaning.png)
 
+## Exploratory Data Analysis on Calendar DataSet to look for basic trends
+```python
+#Average Daily Price Over Time in $
+calendar_data.groupby('date')['price'].mean().plot(figsize=(12,6), title="Average Daily Price Over Time in $")
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet_Cleaning.png)
+
