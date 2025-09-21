@@ -239,5 +239,5 @@ print(listings_clean.head())
 #Average Daily Price Over Time in $
 calendar_data.groupby('date')['price'].mean().plot(figsize=(12,6), title="Average Daily Price Over Time in $")
 ```
-![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet_Cleaning.png)
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Basic_EDA.png)
 
