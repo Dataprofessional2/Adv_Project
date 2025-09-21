@@ -241,3 +241,23 @@ calendar_data.groupby('date')['price'].mean().plot(figsize=(12,6), title="Averag
 ```
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Basic_EDA.png)
 
+```python
+# Group by weekday and calculate mean price
+calendar_data['month'] = calendar_data['date'].dt.month
+calendar_data.groupby('month')['price'].mean()
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Basic_eda2.png)
+
+```python
+import matplotlib.pyplot as plt
+# Group by weekday and calculate mean price
+mean_price_mos = calendar_data.groupby('month')['price'].mean()
+# Bar plot
+plt.bar(mean_price_mos.index, mean_price_mos.values)
+plt.xlabel("Month")
+plt.ylabel("Average Price")
+plt.title("Average Price by Month in $")
+plt.ylim(0)   # y-axis starts from 0
+plt.show()
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/basic_eda3.png)
