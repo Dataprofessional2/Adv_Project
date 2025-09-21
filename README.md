@@ -261,3 +261,24 @@ plt.ylim(0)   # y-axis starts from 0
 plt.show()
 ```
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/basic_eda3.png)
+
+
+```python
+# Group by weekday and calculate mean price
+calendar_data['weekday'] = calendar_data['date'].dt.day_name()
+calendar_data.groupby('weekday')['price'].mean().sort_values()
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/eda4.png)
+
+```python
+import matplotlib.pyplot as plt
+# Group by weekday and calculate mean price
+meanofprice = calendar_data.groupby('weekday')['price'].mean() # Bar plot
+plt.bar(meanofprice.index, meanofprice.values)
+plt.xlabel("Weekdays")
+plt.ylabel("Average Price in $")
+plt.title("Average Price by Weekday")
+plt.ylim(0) 
+plt.show()
+```
+![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/eda5.png)
