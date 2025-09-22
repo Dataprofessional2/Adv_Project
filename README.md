@@ -308,4 +308,75 @@ plt.show()
 
 ### Exploratory Data Analysis (EDA) on Listings Data 
 - Problem 1: What are the features/facilities/ammenities of a property that affect its price?
+
 Our first sub-problem was to focus on the physical features and facilities of the property itself. We wanted to see if there were any common features among the highly priced listings. We mainly focused on the listing's room type, the property type, number of bedrooms and common ammenities.
+```python
+#Count of Listings by Room Type
+plt.figure(figsize=(12,6))
+sns.countplot(data=listings_clean, x='room_type', order=listings_clean['room_type'].value_counts().index)
+plt.title('Count of Listings by Room Type')
+plt.xlabel('Room Type')
+plt.ylabel('Number of Listings')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/viz1.png)
+
+```python
+#Average Price by Room Type
+import seaborn as sns
+plt.figure(figsize=(8,5))
+sns.barplot(data=listings_clean, x='room_type', y='price', 
+            order=listings_clean.groupby('room_type')['price'].mean().sort_values(ascending=False).index)
+plt.title('Average Price by Room Type')
+plt.xlabel('Room Type')
+plt.ylabel('Average Price ($)')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/viz2.png)
+
+```python
+top_property_types = listings_clean['property_type'].value_counts().nlargest(10).index
+plt.figure(figsize=(12,6))
+sns.barplot(data=listings_clean[listings_clean['property_type'].isin(top_property_types)], 
+            x='property_type', y='price', order=top_property_types)
+plt.title('Average Price of Top 10 Property Types')
+plt.xlabel('Property Type')
+plt.ylabel('Average Price ($)')
+plt.xticks(rotation=45)
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/viz3.png)
+
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+import ast
+
+# 5. Top Amenities (Without Counter)
+
+# Convert amenities string to list
+amenities_list = listings_clean['amenities'].dropna().apply(lambda x: ast.literal_eval(x) if x.startswith('[') else x.strip('{}').split(','))
+
+# Flatten the list of amenities
+all_amenities = []
+for sublist in amenities_list:
+    for amenity in sublist:
+        all_amenities.append(amenity.strip().replace('"','').replace("'",""))
+
+# Create a DataFrame from the list
+amenities_df = pd.DataFrame(all_amenities, columns=['Amenity'])
+
+# Count occurrences of each amenity
+top_amenities_df = amenities_df['Amenity'].value_counts().head(20).reset_index()
+top_amenities_df.columns = ['Amenity', 'Count']
+
+# Plot top 20 amenities
+plt.figure(figsize=(12,6))
+sns.barplot(data=top_amenities_df, x='Count', y='Amenity')
+plt.title('Top 20 Amenities in Listings')
+plt.xlabel('Number of Listings')
+plt.ylabel('Amenity')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/viz4.png)
