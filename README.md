@@ -234,7 +234,23 @@ print(listings_clean.head())
 ```
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/DataSet_Cleaning.png)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Exploratory Data Analysis on Calendar DataSet to look for basic trends
+
 ```python
 #Average Daily Price Over Time in $
 calendar_data.groupby('date')['price'].mean().plot(figsize=(12,6), title="Average Daily Price Over Time in $")
@@ -282,3 +298,14 @@ plt.ylim(0)
 plt.show()
 ```
 ![Image](https://github.com/Dataprofessional2/Adv_Project/blob/main/eda5.png)
+
+
+
+
+
+
+
+
+### Exploratory Data Analysis (EDA) on Listings Data 
+- Problem 1: What are the features/facilities/ammenities of a property that affect its price?
+Our first sub-problem was to focus on the physical features and facilities of the property itself. We wanted to see if there were any common features among the highly priced listings. We mainly focused on the listing's room type, the property type, number of bedrooms and common ammenities.
