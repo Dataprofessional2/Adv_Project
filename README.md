@@ -391,3 +391,58 @@ plt.ylabel('Price ($)')
 plt.show()
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/plot.png)
+
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Number of listings per neighbourhood
+neighbourhood_counts = listings_clean['neighbourhood_cleansed'].value_counts().head(15)
+
+plt.figure(figsize=(12,6))
+sns.barplot(x=neighbourhood_counts.values, y=neighbourhood_counts.index)
+plt.title('Top 15 Neighbourhoods by Number of Listings')
+plt.xlabel('Number of Listings')
+plt.ylabel('Neighbourhood')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/neighbourhood.png)
+
+
+
+```python
+# Median price of listings in each neighbourhood
+median_price_neighbourhood = listings_clean.groupby('neighbourhood_cleansed')['price'].median().sort_values(ascending=False).head(15)
+
+plt.figure(figsize=(12,6))
+sns.barplot(x=median_price_neighbourhood.values, y=median_price_neighbourhood.index)
+plt.title('Top 15 Neighbourhoods by Median Price')
+plt.xlabel('Median Price ($)')
+plt.ylabel('Neighbourhood')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/med_neigh.png)
+
+
+
+
+```python
+# Compute both listings count and median price
+neighbourhood_summary = listings_clean.groupby('neighbourhood_cleansed').agg(
+    num_listings=('id', 'count'),
+    median_price=('price', 'median')
+).reset_index()
+
+# Sort neighbourhoods with higher listings + higher price
+neighbourhood_summary = neighbourhood_summary.sort_values(by=['median_price', 'num_listings'], ascending=[False, False]).head(15)
+
+plt.figure(figsize=(12,6))
+sns.scatterplot(data=neighbourhood_summary, x='num_listings', y='median_price', hue='neighbourhood_cleansed', s=150, palette='tab10')
+plt.title('Neighbourhoods with More Listings and Higher Prices')
+plt.xlabel('Number of Listings')
+plt.ylabel('Median Price ($)')
+plt.legend(bbox_to_anchor=(1,1), loc='upper left')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/plott.png)
