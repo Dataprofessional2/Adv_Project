@@ -380,3 +380,14 @@ plt.ylabel('Amenity')
 plt.show()
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/viz4.png)
+
+
+```python
+plt.figure(figsize=(8,5))
+sns.boxplot(data=listings_clean, x='bedrooms', y='price')
+plt.title('Price Distribution by Number of Bedrooms')
+plt.xlabel('Number of Bedrooms')
+plt.ylabel('Price ($)')
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/plot.png)
