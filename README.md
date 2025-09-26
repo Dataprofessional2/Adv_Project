@@ -475,3 +475,12 @@ model=smf.ols(
 print(model.summary())
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/ols.png)
+
+
+```python
+# Predictions and Residuals
+predictions = model.predict(sample)
+residuals = sample['price']-predictions
+print(residuals.head())
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/pred_and_resid.png)
