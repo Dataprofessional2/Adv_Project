@@ -446,3 +446,12 @@ plt.legend(bbox_to_anchor=(1,1), loc='upper left')
 plt.show()
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/plott.png)
+
+
+
+### Building a Basic Linear Regression 
+
+Baseline Linear Regression
+- We begin with a simple linear regression model to understand how different features correlate with price and establish a performance benchmark.
+
+
