@@ -455,3 +455,23 @@ Baseline Linear Regression
 - We begin with a simple linear regression model to understand how different features correlate with price and establish a performance benchmark.
 
 
+##### Creating A Sample
+```python
+# Creating A bootstrap sample  for linear regression 
+sample=listings_clean.sample(n=20,replace=True,random_state=1000)
+est=sample['price'].mean
+est
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/Sample.png)
+
+```python
+# Building a Linear Regression Model
+import statsmodels.formula.api as smf #importing libraries
+#Build the model
+model=smf.ols(
+    formula='price ~ accommodates + bedrooms + bathrooms + number_of_reviews + review_scores_rating + availability_365 + room_type + city + cancellation_policy',data=sample).fit()
+
+#Summary of the model
+print(model.summary())
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/ols.png)
