@@ -1,4 +1,4 @@
-# AirBnb Price Optimization (Started 17 Sept 2025)
+# AirBnb Price Optimization 
 This repository contains projects and case studies based on real world business problems. It includes data cleaning, analysis, visualization, and insights using different tools. The goal is to apply real-world data analytics techniques to solve business problems and derive actionable insights.
 
 ## How Airbnb Seattle Optimizes Pricing for Maximum Revenue
@@ -484,3 +484,37 @@ residuals = sample['price']-predictions
 print(residuals.head())
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/pred_and_resid.png)
+
+
+
+```python
+# Plotting Actual vs Predicted Value
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(7,5))
+sns.scatterplot(x=sample['price'], y=predictions)
+plt.plot([sample['price'].min(), sample['price'].max()],
+         [sample['price'].min(), sample['price'].max()],
+         color='red', linestyle='--')
+plt.xlabel("Actual Price")
+plt.ylabel("Predicted Price")
+plt.title("Actual vs Predicted Price")
+plt.ylim(0)
+plt.xlim(0)
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/resid_act_val.png)
+
+
+```python
+# plotting Residuals
+plt.figure(figsize=(7,5))
+sns.scatterplot(x=predictions, y=residuals)
+plt.axhline(0, color='red', linestyle='--')
+plt.xlabel("Predicted Price")
+plt.ylabel("Residuals")
+plt.title("Residuals vs Predicted Price")
+plt.show()
+```
+![image]()
