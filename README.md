@@ -518,3 +518,37 @@ plt.title("Residuals vs Predicted Price")
 plt.show()
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/residual_def_pred_val.png)
+
+
+
+
+
+```python
+# Distribution of residuals
+plt.figure(figsize=(7,5))
+sns.histplot(residuals, bins=30, kde=True)
+plt.title("Distribution of Residuals")
+plt.xlabel("Residuals")
+plt.show()
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/dist_residuals.png)
+
+
+
+
+
+```python
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+import numpy as np
+
+r2 = r2_score(sample['price'], predictions)
+mse = mean_squared_error(sample['price'], predictions)
+mae = mean_absolute_error(sample['price'], predictions)
+rmse = np.sqrt(mse)
+
+print("R²:", r2)
+print("MSE:", mse)
+print("RMSE:", rmse)
+print("MAE:", mae)
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/eval_model.png)
