@@ -517,4 +517,4 @@ plt.ylabel("Residuals")
 plt.title("Residuals vs Predicted Price")
 plt.show()
 ```
-![image]()
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/residual_def_pred_val.png)
