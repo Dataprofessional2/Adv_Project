@@ -16,10 +16,6 @@ This repository contains projects and case studies based on real world business 
 - Location and Pricing Trends
 - Seasonality and Booking Patterns
 - Feature Engineering
-- Price per Guest
-- Proximity to Downtown
-- Host Experience Metrics
-- Temporal Features
 - Modeling Approach
 - Baseline Linear Regression
 - Advanced Models: Random Forest and XGBoost
@@ -28,7 +24,6 @@ This repository contains projects and case studies based on real world business 
 - Feature Importance Analysis
 - Insights and Recommendations
 - Pricing Strategies for Hosts
-- Balancing Occupancy and Revenue
 -Identifying High-Impact Features
 - Conclusion
 
@@ -552,3 +547,10 @@ print("RMSE:", rmse)
 print("MAE:", mae)
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/eval_model.png)
+
+
+
+
+
+### Insights & Recommendations
+
