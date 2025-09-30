@@ -560,4 +560,4 @@ print("MAE:", mae)
 - These Property types had the highest average price (Condominium, Apartment,Loft, etc).
 - Top Amenities were (Wireless Internet, Heating, Kitchen, Smoke Detector, Etc).
 - Top Neighbourhood were (Broadway, BellTown, WallingFord, Fremont, Etc).
-- The prices were strongly with accommodates, bedrooms, bathrooms, review_scores_rating, availability_365, room_type, city, cancellation_policy
+- The prices were strongly with accommodates, bedrooms, bathrooms, availability_365, room_type, city, cancellation_policy
