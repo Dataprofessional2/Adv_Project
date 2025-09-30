@@ -548,9 +548,16 @@ print("MAE:", mae)
 ```
 ![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/eval_model.png)
 
+### Random Forest
 
 
 
-
-### Insights & Recommendations
-
+## Insights & Recommendations
+- Average daily prices peak during the early (Jan–Feb) and late (Oct–Dec) months of the year, while dipping in the mid-year period, indicating clear seasonal demand patterns.
+- The average daily price is about 4% higher on Fridays and Saturdays compared to other weekdays, reflecting increased weekend demand.
+- The count of room type was highest for Entire Home/Apt followed by Private Room and then Shared rooms with visible differences.
+- The average price of different room type was highest for Entire Home/Apt followed by Private Room and then Shared rooms with visible differences.
+- These Property types had the highest average price (Condominium, Apartment,Loft, etc).
+- Top Amenities were (Wireless Internet, Heating, Kitchen, Smoke Detector, Etc).
+- Top Neighbourhood were (Broadway, BellTown, WallingFord, Fremont, Etc).
+- The prices were strongly with accommodates, bedrooms, bathrooms, review_scores_rating, availability_365, room_type, city, cancellation_policy
