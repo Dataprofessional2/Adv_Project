@@ -21,7 +21,6 @@ This repository contains projects and case studies based on real world business 
 - Advanced Models: Random Forest and XGBoost
 - Model Evaluation
 - Error Metrics: MAE and RMSE
-- Feature Importance Analysis
 - Insights and Recommendations
 - Pricing Strategies for Hosts
 -Identifying High-Impact Features
