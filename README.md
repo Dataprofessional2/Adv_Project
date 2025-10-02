@@ -560,3 +560,19 @@ print("MAE:", mae)
 - Top Amenities were (Wireless Internet, Heating, Kitchen, Smoke Detector, Etc).
 - Top Neighbourhood were (Broadway, BellTown, WallingFord, Fremont, Etc).
 - The prices were strongly with accommodates, bedrooms, bathrooms, availability_365, room_type, city, cancellation_policy
+
+
+### Recommendations
+- Pricing strategy
+Implement dynamic pricing to automatically adjust rates for seasonal peaks (Jan–Feb, Oct–Dec) and higher weekend demand (Fri/Sat).
+Offer off-season promotions during the mid-year dip to increase occupancy and attract budget travelers. 
+-Listings and marketing
+Highlight Entire Home/Apt listings in your marketing, as they command the highest average price.
+Emphasize top amenities like Wireless Internet, Heating, and Kitchen prominently in your listing descriptions.
+Showcase top neighborhoods (Broadway, Belltown, etc.) as location-specific selling points.
+Enhance listing photos and use detailed descriptions to show your property in its best light. 
+- Growth and improvements
+Expand your inventory by acquiring more high-value property types, like condominiums and apartments, in profitable neighborhoods.
+Use predictive analytics to fine-tune pricing and optimize availability based on demand factors.
+Personalize the guest experience by using feedback to improve service and amenities.
+Streamline check-in/out with technology to improve the guest experience, especially in higher-demand Entire Home/Apt properties
