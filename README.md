@@ -549,6 +549,91 @@ print("MAE:", mae)
 
 ### Random Forest
 
+```python
+# ✅ 1. Import libraries
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+
+# ✅ 2. (Optional but powerful) Feature engineering
+# Count amenities if available
+if 'amenities' in listings_clean.columns:
+    listings_clean['amenities_count'] = listings_clean['amenities'].apply(lambda x: len(str(x).split(',')))
+else:
+    listings_clean['amenities_count'] = 0
+
+# Host experience in years
+if 'host_since' in listings_clean.columns:
+    listings_clean['host_since'] = pd.to_datetime(listings_clean['host_since'], errors='coerce')
+    listings_clean['host_experience_years'] = (pd.to_datetime("today") - listings_clean['host_since']).dt.days / 365
+    listings_clean['host_experience_years'] = listings_clean['host_experience_years'].fillna(0)
+else:
+    listings_clean['host_experience_years'] = 0
+
+# ✅ 3. Select features and target
+features = [
+    'accommodates', 'bedrooms', 'bathrooms', 'beds',
+    'number_of_reviews', 'review_scores_rating',
+    'availability_365', 'room_type', 'property_type', 'host_is_superhost',
+    'city', 'cancellation_policy', 'amenities_count', 'host_experience_years'
+]
+
+X = listings_clean[features]
+y = listings_clean['price']
+
+# ✅ 4. Train-test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# ✅ 5. Identify categorical columns for encoding
+categorical_cols = ['room_type', 'property_type', 'city', 'cancellation_policy']
+numeric_cols = [col for col in features if col not in categorical_cols]
+
+# ✅ 6. Preprocessing: One-hot encode categoricals
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_cols)
+    ],
+    remainder='passthrough'
+)
+
+# ✅ 7. Build pipeline with RandomForest
+model = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('regressor', RandomForestRegressor(
+        n_estimators=400,       # more trees = better learning
+        max_depth=None,         # let the model decide depth
+        random_state=42,
+        n_jobs=-1
+    ))
+])
+
+# ✅ 8. Train the model
+model.fit(X_train, y_train)
+
+# ✅ 9. Make predictions
+y_pred = model.predict(X_test)
+
+# ✅ 10. Evaluate model
+r2 = r2_score(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+mae = mean_absolute_error(y_test, y_pred)
+
+print("🌲 Random Forest Model Performance:")
+print(f"R² Score: {r2:.4f}")
+print(f"MSE: {mse:.2f}")
+print(f"RMSE: {rmse:.2f}")
+print(f"MAE: {mae:.2f}")
+```
+![image](https://github.com/Dataprofessional2/Adv_Project/blob/main/img.png)
+
 
 
 ## Insights & Recommendations
